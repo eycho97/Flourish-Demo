@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Cyberbullying Intervention App for Adolescents",
+    "githubUrl": "https://github.com/eycho97/Flourish-Demo"
   }
 }
