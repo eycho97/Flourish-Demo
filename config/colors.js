@@ -3,4 +3,5 @@ export default {
   white: '#fff',
   black: '#000',
   msgYellow: "#FFE5C0",
+  btnYellow: "#FFCF86",
 };
