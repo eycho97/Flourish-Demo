@@ -1,21 +1,49 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableWithoutFeedback, TouchableOpacity, Dimensions, Platform, View, Alert, Image, SafeAreaView, Button} from 'react-native';
+import {useDimension} from "@react-native-community/hooks";
+import {Home} from "./screens/Home.js";
+import colors from './config/colors';
 
 export default function App() {
+  let x = 1;
+  console.log("App executed");
+  // console.log(Dimensions.get('screen'));
+  const handlePress = () => console.log("Text clicked")
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    // <Home />
+    <SafeAreaView style={styles.container}>
+      <View style={{
+        height: 25,
+        alignItems: "center",
+      }}>
+        <Text style={styles.title}>- FLOURISH -</Text>
+      </View>
+      <Home />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: '#fff',
+    backgroundColor: colors.background,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  baseText: {
+    fontFamily: "Helvetica Neue",
+    color: colors.white,
+    fontSize: 20,
+    fontWeight: "700",
+  },
+  title: {
+    fontFamily: "Helvetica",
+    color: colors.white,
+    fontSize: 20,
+    fontWeight: "500",
   },
 });
