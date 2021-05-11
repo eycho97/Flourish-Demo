@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableWithoutFeedback } from 'react-native';
 import RNDrawOnScreen from 'react-native-draw-on-screen';
 // import Controls from './Controls';
 import colors from '../config/colors';
  
 export class Scribble extends React.Component {
+
   state = {
     color: 'black',
     strokeWidth: 10,
@@ -37,13 +38,15 @@ export class Scribble extends React.Component {
           handleClear={this.clear}
         /> */}
         <View style={styles.container}>
-          <View style={{
-            height: 100,
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <Text style={styles.baseText}>Let's scribble over this message!</Text>
-          </View>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate("Test")}>
+            <View style={{
+              height: 100,
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+              <Text style={styles.baseText}>Let's scribble over this message!</Text>
+            </View>
+          </TouchableWithoutFeedback>
           <View style={styles.msg}>
             <Text style={styles.msgText}>Why are you so ugly?</Text>
           </View>
