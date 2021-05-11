@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, TouchableOpacity, Dimensions, Platform, View, Alert, Image, SafeAreaView, Button} from 'react-native';
 import {useDimension} from "@react-native-community/hooks";
 import {Home} from "./screens/Home.js";
+import {Scribble} from "./screens/Scribble.js";
 import colors from './config/colors';
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
       }}>
         <Text style={styles.title}>- FLOURISH -</Text>
       </View>
-      <Home />
+      <Scribble />
       <StatusBar style="auto" />
     </SafeAreaView>
   );

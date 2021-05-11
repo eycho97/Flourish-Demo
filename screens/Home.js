@@ -47,39 +47,6 @@ export function Home() {
         </View>
       </View>
     </View>
-    // <View style={{
-    //   backgroundColor: "grey",
-    //   height: 70,
-    //   flex: 0.5,
-    //   flexDirection: "row",
-    //   justifyContent: "center",
-    //   alignContent: "center",
-    //   alignItems: "stretch",
-    //   flexWrap: "wrap",
-    // }}>
-    // <View style={{
-    //     backgroundColor: "dodgerblue",
-    //     width: 100,
-    //     height: 100,
-    //     alignSelf: "flex-start",
-    //   }}/>
-    //   <View style={{
-    //     backgroundColor: "#ff1",
-    //     width: 100,
-    //     height: 200,
-    //   }}/>
-    //   <View style={{
-    //     backgroundColor: "grey",
-    //     width: 100,
-    //     height: 200,
-    //   }}/>
-    //   <View style={{
-    //     backgroundColor: "greenyellow",
-    //     width: 100,
-    //     height: 200,
-    //   }}/>
-    // </View>
-
     
   );
 }
