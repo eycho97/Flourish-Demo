@@ -3,7 +3,7 @@ import { StyleSheet, Text, ImageBackground, TouchableWithoutFeedback, TouchableO
 import colors from '../config/colors';
 
 
-export function Home() {
+export function Home({navigation}) {
   return (
     <View style={styles.container}>
       <View style={{
@@ -35,15 +35,23 @@ export function Home() {
               <Image source={require('../assets/images/break_preview.png')}></Image>
             </View>
           </View>
-          <View style={styles.breakOption}>
-            <View style={styles.iconWrapper}>
-              <Image source={require('../assets/images/pencil.png')}></Image>
-              <Text style={styles.innerTxt}>Scribble</Text>
+          <TouchableWithoutFeedback onPress={() => navigation.navigate("Scribble")}>
+            <View style={styles.breakOption}>
+              <View style={styles.iconWrapper}>
+                <Image source={require('../assets/images/pencil.png')}></Image>
+                {/* <Text style={styles.innerTxt}>Scribble</Text> */}
+                {/* <Button 
+                  style={styles.innerTxt} 
+                  title="Scribble"
+                  onPress={() => navigation.navigate("Scribble")}
+                /> */}
+                <Text style={styles.innerTxt}>Scribble</Text>
+              </View>
+              <View style={styles.prevWrapper}>
+                <Image source={require('../assets/images/scribble_preview.png')}></Image>
+              </View>
             </View>
-            <View style={styles.prevWrapper}>
-              <Image source={require('../assets/images/scribble_preview.png')}></Image>
-            </View>
-          </View>
+          </TouchableWithoutFeedback>
         </View>
       </View>
     </View>

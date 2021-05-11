@@ -2,9 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, TouchableOpacity, Dimensions, Platform, View, Alert, Image, SafeAreaView, Button} from 'react-native';
 import {useDimension} from "@react-native-community/hooks";
-import {Home} from "./screens/Home.js";
-import {Scribble} from "./screens/Scribble.js";
+import {enableScreens} from 'react-native-screens';
+import Home from "./screens/Home.js";
+import Scribble from "./screens/Scribble.js";
 import colors from './config/colors';
+
+enableScreens();
+
+import {NavigationContainer, DefaultTheme} from "@react-navigation/native";
+import {createNativeStackNavigator} from "react-native-screens/native-stack";
+
+const Stack = createNativeStackNavigator();
+
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: 'rgb(255, 45, 85)',
+    background: colors.background,
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(28, 28, 30)',
+    border: 'rgb(199, 199, 204)',
+    notification: 'rgb(255, 69, 58)',
+  },
+};
 
 export default function App() {
   let x = 1;
@@ -20,7 +40,22 @@ export default function App() {
       }}>
         <Text style={styles.title}>- FLOURISH -</Text>
       </View>
-      <Scribble />
+      <View style={{flex: 1, backgroundColor: colors.background}}>
+        <NavigationContainer
+          theme={MyTheme}
+        >
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+              stackAnimation: "fade",
+              cardStyle: { backgroundColor: colors.background}
+            }}
+          >
+            <Stack.Screen name="Home" component={Home}/>
+            <Stack.Screen name="Scribble" component={Scribble}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
