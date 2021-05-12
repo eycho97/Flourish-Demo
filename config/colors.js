@@ -4,4 +4,13 @@ export default {
   black: '#000',
   msgYellow: "#FFE5C0",
   btnYellow: "#FFCF86",
+  darkgrey: '#4F4F4F',
+  grey: '#828282',
+  lightgrey: '#BDBDBD',
+  whitegrey: '#E0E0E0',
+  red: 'red',
+  orange: '#F2994A',
+  yellow: '#F2C94C',
+  darkGreen: '#219653',
+  turquoise: '#6FCF97',
 };
