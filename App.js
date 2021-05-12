@@ -5,7 +5,7 @@ import {useDimension} from "@react-native-community/hooks";
 import {enableScreens} from 'react-native-screens';
 import Home from "./screens/Home.js";
 import Scribble from "./screens/Scribble.js";
-import Test from "./screens/Test.js";
+import Feedforward from "./screens/Feedforward.js";
 import colors from './config/colors';
 
 enableScreens();
@@ -54,7 +54,7 @@ export default function App() {
           >
             <Stack.Screen name="Home" component={Home}/>
             <Stack.Screen name="Scribble" component={Scribble}/>
-            <Stack.Screen name="Test" component={Test}/>
+            <Stack.Screen name="Feedforward" component={Feedforward}/>
           </Stack.Navigator>
         </NavigationContainer>
       </View>

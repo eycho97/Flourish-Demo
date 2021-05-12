@@ -3,7 +3,7 @@ import { StyleSheet, Text, ImageBackground, TouchableWithoutFeedback, TouchableO
 import colors from '../config/colors';
 
 
-export function Home({navigation}) {
+const Test = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={{
@@ -20,7 +20,6 @@ export function Home({navigation}) {
           </ImageBackground>
         </View>
       </View>
-      <Image style={styles.sprout} source={require('../assets/images/sprout_1.png')} />
       <View style={styles.chooseMethod}>
         <View style={styles.chooseTxt}>
           <Text style={styles.innerTxt}>CHOOSE A METHOD</Text>
@@ -35,23 +34,31 @@ export function Home({navigation}) {
               <Image source={require('../assets/images/break_preview.png')}></Image>
             </View>
           </View>
-          <TouchableWithoutFeedback onPress={() => navigation.navigate("Feedforward")}>
-            <View style={styles.breakOption}>
-              <View style={styles.iconWrapper}>
+          
+          <View style={styles.breakOptionExpanded}>
+            <View style={{flexDirection: "row", marginTop: 20, justifyContent: "space-between"}}>
+              <View style={styles.iconWrapperExpanded}>
                 <Image source={require('../assets/images/pencil.png')}></Image>
-                {/* <Text style={styles.innerTxt}>Scribble</Text> */}
-                {/* <Button 
-                  style={styles.innerTxt} 
-                  title="Scribble"
-                  onPress={() => navigation.navigate("Scribble")}
-                /> */}
                 <Text style={styles.innerTxt}>Scribble</Text>
               </View>
-              <View style={styles.prevWrapper}>
-                <Image source={require('../assets/images/scribble_preview.png')}></Image>
+              <View style={{marginRight: 30}}>
+                <Text style={styles.feedText}>In the next screen,{'\n'}you can draw on the{'\n'}message as you want.</Text>
               </View>
             </View>
-          </TouchableWithoutFeedback>
+            <View style={{marginTop: 40}}>
+              <View style={styles.prevWrapperExpanded}>
+                <Image source={require('../assets/images/scribble_preview.png')}></Image>
+                <Image style={styles.sprout} source={require('../assets/images/sprout_pen.png')} />
+              </View>
+            </View>
+            
+            <TouchableWithoutFeedback onPress={() => navigation.navigate("Scribble")}>
+              <View style={styles.start}>
+                <Text>START</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+          
         </View>
       </View>
     </View>
@@ -112,17 +119,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   sprout: {
-    top: -60,
-    right: 120,
+    top: -40,
+    left: 135,
   },
   chooseMethod: {
     backgroundColor: colors.btnYellow,
-    height: "40%",
+    height: "65%",
     width: "80%",
     // alignItems: "center",
     justifyContent: "space-around",
     borderRadius: 10,
-    top: 50,
+    top: 30,
   },
   chooseTxt: {
     alignSelf: "flex-start",
@@ -139,10 +146,29 @@ const styles = StyleSheet.create({
   },
   breakOption: {
     width: "90%",
-    height: "40%",
+    height: "23%",
     backgroundColor: colors.white,
     flexDirection: "row",
     alignItems: "center",
+    alignContent: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.41,
+    shadowRadius: 9.11,
+    borderRadius: 5,
+    borderWidth: 3,
+    borderColor: colors.btnYellow,
+    // justifyContent: "space-around",
+  },
+  breakOptionExpanded: {
+    width: "90%",
+    height: "66%",
+    backgroundColor: colors.white,
+    flexDirection: "column",
+    // alignItems: "center",
     alignContent: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -165,7 +191,29 @@ const styles = StyleSheet.create({
   prevWrapper: {
     flex: 0.8,
     alignItems: "center",
+  },
+  iconWrapperExpanded: {
+    // flex: 0.2,
+    left: 10,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginLeft: 5,
+  },
+  prevWrapperExpanded: {
+    marginLeft: 15
+  },
+  feedText: {
+    fontFamily: "Helvetica",
+  },
+  start: {
+    backgroundColor: colors.btnYellow,
+    width: "55%",
+    height: 28,
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginTop: -70,
+    marginLeft: 15,
   }
 });
-export default Home;
-
+export default Test

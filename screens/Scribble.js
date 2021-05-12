@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     // justifyContent: "space-around",
     borderRadius: 10,
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: colors.btnYellow,
     top: 50,
   },
