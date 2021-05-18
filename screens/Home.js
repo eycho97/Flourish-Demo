@@ -39,12 +39,6 @@ export function Home({navigation}) {
             <View style={styles.breakOption}>
               <View style={styles.iconWrapper}>
                 <Image source={require('../assets/images/pencil.png')}></Image>
-                {/* <Text style={styles.innerTxt}>Scribble</Text> */}
-                {/* <Button 
-                  style={styles.innerTxt} 
-                  title="Scribble"
-                  onPress={() => navigation.navigate("Scribble")}
-                /> */}
                 <Text style={styles.innerTxt}>Scribble</Text>
               </View>
               <View style={styles.prevWrapper}>
@@ -134,7 +128,7 @@ const styles = StyleSheet.create({
   },
   innerTxt: {
     fontFamily: "Helvetica Neue",
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: "500",
   },
   breakOption: {

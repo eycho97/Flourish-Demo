@@ -179,12 +179,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     height: "40%",
     width: "80%",
-    // alignItems: "center",
-    // justifyContent: "space-around",
     borderRadius: 10,
     borderWidth: 3,
     borderColor: colors.btnYellow,
-    top: 50,
+    marginTop: 30,
   },
   undoClear: {
     marginLeft: 20,
@@ -202,7 +200,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignItems: "center",
     justifyContent: "space-around",
-    marginTop: 100,
+    marginTop: 30,
   },
   actions: {
     flexDirection: "row",

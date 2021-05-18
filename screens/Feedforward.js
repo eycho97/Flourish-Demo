@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   innerTxt: {
     fontFamily: "Helvetica Neue",
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: "500",
   },
   breakOption: {
